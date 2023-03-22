@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        brandPrimary: '#242929',
+                        brandSecondary: '#3e4242',
+                        brandborder: '#9ea5a5',
+                        brandBg: '#f6f8f8',
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+    <title>Alex Turnwall | Single Page Application</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-brandBg">
+    <div class=" m-auto">
+        <!-- Leptop Header -->
+        <header id="header" class="main-header public-header  z-[999] bg-brandBg active-header">
+            <nav class="main-nav h-20 flex items-center">
+                <div class="container ">
+                    <div id="header-container"
+                        class=" grid grid-cols-12 h-20  items-center border-b border-brandborder">
+                        <div class="nav-brand col-span-2 text-brandPrimary font-bold">
+                            <a href="" class="brand-logo text-lg ">
+                                <span class="name">Alex Turnwall</span>
+                            </a>
+                        </div>
+                        <div class="nav-menu col-span-10  text-brandSecondary">
+                            <div class="main-menu-container">
+                                <ul class="main-menu list-none h-20 flex text-brandSecondary " id="btns">
+                                    <li class="menu-item h-20 p-4 pt-6 work"><a onclick="active('work')"
+                                            href="#selectWork" class="py-6">Work</a></li>
+                                    <li class="menu-item h-20 p-4 pt-6 blog"><a onclick="active('blog')"
+                                            href="#selectPost" class="py-6">Blog</a></li>
+                                    <li class="menu-item h-20 p-4 pt-6 about"><a onclick="active('about')" href="#about"
+                                            class="py-6">About</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Mobile Header -->
+        <header class="mobile-header min-[993px]:hidden  h-[3.8rem] flex items-center border-b border-brandborder">
+            <div class="container mobile-header-inner text-brandPrimary font-bold">
+                <a href="" class="brand-logo text-lg ">
+                    <span class="name">Alex Turnwall</span>
+                </a>
+            </div>
+
+            <a class="navbar-toggle absolute right-0 block z-50 bg-[#2d69ad] overflow-hidden  cursor-pointer  max-[767px]:fixed max-[767px]:bottom-0 min-[767px]:top-0"
+                onclick="toggleNav()"> <i
+                    class="fa fa-solid fa-bars text-[1.2rem] text-[#b7b8b8] hover:text-[#F5F8F7]"></i></a>
+        </header>
+
+        <!-- Mobile Sidebar -->
+        <div id="sidebar"
+            class="sidebar bg-brandBg top-0 right-0 z-[1] overflow-hidden fixed w-0 h-full min-[992px]:hidden">
+            <div class="ml-4">
+                <div class="grid grid-cols-12 h-20  items-center border-b border-brandborder">
+                    <div class="nav-brand col-span-12 text-brandPrimary font-bold">
+                        <a href="" class="brand-logo text-base ">
+                            <span class="name">Alex Turnwall</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-menu col-span-10  text-brandSecondary">
+                    <div class="main-menu-container">
+                        <ul class="main-menu list-none  block text-brandSecondary">
+                            <li class=" pt-4 pb-4 border-b border-brandborder work"><a onclick="active('work')"
+                                    href="#selectWork" class="">Work</a>
+                            </li>
+                            <li class=" pt-4 pb-4 border-b border-brandborder blog"><a onclick="active('blog')"
+                                    href="#selectPost" class="">Blog</a>
+                            </li>
+                            <li class=" pt-4 pb-4 border-b border-brandborder about"><a onclick="active('about')"
+                                    href="#about" class="">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Head Section -->
+        <div class="homage-intro min-[993px]:mt-[80px] main-page-intro container">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12 pb-6">
+                    <h1 class=" display-highlight max-[767px]:text-[2.2rem]">Designer & <br> Product Strategist </h1>
+                </div>
+                <div class="bg-highlight sm:col-span-12 md:col-span-10  lg:col-span-6 col-span-10">
+                    <p class="subtitle mb-6 max-[1267px]:text-[1.5rem] max-[767px]:text-[1.2rem]">I bring a founder’s
+                        mentality to designing products, experiences, brands, and
+                        teams.</p>
+                </div>
+            </div>
+
+            <div class="container m-auto pt-12">
+                <div class="grid grid-cols-12 gap-4 ">
+                    <div class="xl:col-span-2 lg:col-span-1 md:col-span-1  max-[1200px]:hidden"></div>
+                    <div class="bg-highlight col-span-10 sm:col-span-10 lg:col-span-5 xl:col-span-4 ">
+                        <p class="description">I've spent over a decade working with teams to ship products that delight
+                            users
+                            and advance organizations’ goals. <a href=""> Learn More </a></p>
+                    </div>
+                    <div class="bg-highlight col-span-10 lg:col-span-5 sm:col-span-10 xl:col-span-4">
+                        <p class="description">Staff UX Design Lead @Verily. Previously Head of Design <a href="">
+                                @Admithub </a>, Chief
+                            Design
+                            Officer <a href=""> @BevSpot </a>, Lecturer @Northeastern</p>
+                    </div>
+                    <div class="xl:col-span-2 lg:col-span-1 md:col-span-1 sm:col-span-0"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Select Work Container -->
+        <div class="select-work pb-12" id="selectWork">
+            <div class="container">
+                <hr class="rule-lg">
+
+                <div class="grid grid-cols-12 pt-2">
+                    <div class="min-[993px]:col-span-2 col-span-12">
+                        <div class="sticky">
+                            <p> <span class="font-bold section-title ">Select Work </span> <br
+                                    class="max-[992px]:hidden"> <a href="#selectWork">All Work</a></p>
+                        </div>
+                    </div>
+
+                    <div class="  min-[993px]:col-span-10 col-span-12 ">
+
+                        <!-- section 1 -->
+
+                        <hr class="rule min-[993px]:hidden">
+                        <div class="work-item">
+                            <div class="grid grid-cols-10 gap-4 p-4">
+                                <div class="min-[768px]:col-span-6 col-span-12">
+                                    <span class="thumb-img-container ">
+                                        <span class="thumb-img thumb-img-1"></span>
+                                    </span>
+                                </div>
+                                <div class="min-[768px]:col-span-4 col-span-12">
+                                    <div class="title-block pt-6">
+                                        <div class="project-status mb-4">Case Study</div>
+                                        <h3 class="title">AdmitHub AI Suite</h3>
+                                        <p class="description">Leading product design and user research of the SaaS
+                                            platform helping
+                                            educators use behavioral science to nudge students toward success</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- section 2 -->
+
+                        <hr class="rule ">
+                        <div class="work-item">
+                            <div class="grid grid-cols-10 gap-4 p-4">
+                                <div class="min-[768px]:col-span-6 col-span-12">
+                                    <span class="thumb-img-container ">
+                                        <span class="thumb-img thumb-img-2"></span>
+                                    </span>
+                                </div>
+                                <div class="min-[768px]:col-span-4 col-span-12">
+                                    <div class="title-block pt-6">
+                                        <div class="project-status mb-4">Case Study</div>
+                                        <h3 class="title">Connected Proof</h3>
+                                        <p class="description">Designing the cross-device software for an industrial IoT
+                                            platform to help make food and beverage production more sustainable</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- section 2 -->
+
+                        <hr class="rule ">
+                        <div class="work-item">
+                            <div class="grid grid-cols-10 gap-4 p-4">
+                                <div class="min-[768px]:col-span-6 col-span-12">
+                                    <span class="thumb-img-container ">
+                                        <span class="thumb-img thumb-img-3"></span>
+                                    </span>
+                                </div>
+                                <div class="min-[768px]:col-span-4 col-span-12">
+                                    <div class="title-block pt-6">
+                                        <div class="project-status mb-4">Case Study</div>
+                                        <h3 class="title">BevSpot Inventory</h3>
+                                        <p class="description">Leading the UX evolution of an industry-favorite app by
+                                            working closely with customers and “taking over” their jobs for the day</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-cols-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Select Posts Container -->
+        <div class="select-post pb-12" id="selectPost">
+            <div class="container">
+                <hr class="rule-lg">
+
+                <div class="grid grid-cols-12 pt-2">
+                    <div class="min-[993px]:col-span-2 col-span-12">
+                        <div class="sticky">
+                            <p> <span class="font-bold section-title">Select Post </span> <br
+                                    class="max-[992px]:hidden"> <a href="#selectPost">All Posts</a></p>
+                        </div>
+                    </div>
+
+                    <div class="  min-[993px]:col-span-10 col-span-12 ">
+
+                        <!-- section 1 -->
+
+                        <hr class="rule min-[993px]:hidden">
+                        <div class="post-item">
+                            <div class="grid grid-cols-10 gap-4 p-4 reverse">
+
+                                <div class="min-[993px]:col-span-6 col-span-12">
+                                    <div class="title-block pt-6">
+                                        <p class="post-categories">Design</p>
+                                        <p class="title"><a href="">Bicycles are my design inspiration—a Rapha 5×5
+                                                talk</a></p>
+                                        <p class="post-meta">I was recently invited to speak at an event called Rapha
+                                            5×5: Intervals on Design at Fresh Tilled Soil, a local design consultancy.
+                                            It’s a traveling series of design talks that Rapha runs in different cities,
+                                            and here’s the schtick: “5×5: Intervals on Design, a rapid-fire design talk
+                                            where five creatives will talk for five minutes…</p>
+                                        <p class="entry-meta"> 8 minutes read</p>
+                                    </div>
+                                </div>
+                                <div class="min-[993px]:col-span-4 col-span-12 cursor-pointer">
+                                    <span class="select-post-img thumb-img">
+                                        <img src="./assets/images/select-post-1.png" alt="">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- section 2  -->
+
+                        <hr class="rule ">
+                        <div class="post-item">
+                            <div class="grid grid-cols-10 gap-4 p-4 reverse">
+
+                                <div class="min-[993px]:col-span-6 col-span-12">
+                                    <div class="title-block pt-6">
+                                        <p class="post-categories">ADVENTURE</p>
+                                        <p class="title"><a href="">Talking to a giant tanker from a little plastic
+                                                boat</a></p>
+                                        <p class="post-meta">It’s kayaking season here in New England, and as I was
+                                            returning to the water this year I realized I needed to reacquaint myself
+                                            with VHF radio usage. So I’m going to share this story from last summer in
+                                            hopes that it helps some other kayakers in a similar situation, as I haven’t
+                                            found a ton…</p>
+                                        <p class="entry-meta"> 9 minutes read</p>
+                                    </div>
+                                </div>
+                                <div class="min-[993px]:col-span-4 col-span-12 cursor-pointer">
+                                    <span class="select-post-img thumb-img">
+                                        <img src="./assets/images/post-2.png" alt="">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- section 3 -->
+
+                        <hr class="rule ">
+                        <div class="post-item">
+                            <div class="grid grid-cols-10 gap-4 p-4 reverse">
+
+                                <div class="min-[993px]:col-span-6 col-span-12">
+                                    <div class="title-block pt-6">
+                                        <p class="post-categories">Design</p>
+                                        <p class="title"><a href="">Paying homage to (or stealing from) your
+                                                inspiration</a></p>
+                                        <p class="post-meta">I had an idea for the new version of my site: I was going
+                                            to illustrate objects using only HTML and CSS ( to show that I know how to
+                                            do stuff with code), and make them look like they were neatly organized in a
+                                            physical space* (which seems vaguely trendy) according to the underlying
+                                            grid…</p>
+                                        <p class="entry-meta"> 5 minutes read</p>
+                                    </div>
+                                </div>
+                                <div class="min-[993px]:col-span-4 col-span-12 cursor-pointer">
+                                    <span class="select-post-img thumb-img">
+                                        <img src="./assets/images/post-3.png" alt="">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="about-section pb-12" id="about">
+            <div class="container">
+                <hr class="rule-lg">
+
+                <div class="grid grid-cols-12 gap-4 pt-2">
+                    <div class="min-[993px]:col-span-2 col-span-12">
+                        <div class="sticky">
+                            <div>
+                                <p> <span class="font-bold section-title ">About </span> <br class="max-[992px]:hidden">
+                                </p>
+                            </div>
+                            <div class="about-profile">
+                                <img src="./assets/images/profile.png" alt="">
+                                <p class="text-center py-4">
+                                    Designer, developer, and product strategist trying to move the needle.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="  min-[993px]:col-span-6 col-span-12 ">
+                        <hr class="rule min-[993px]:hidden">
+                        <div class="about-description">
+                            <p>I’ve been called a ‘pragmatic’ designer. <br>
+                                I take that as a compliment. </p>
+                            <p>
+                                My professional work slants towards product design that can make a measurable impact.
+                                Usability over style. Stylish when called for.
+                            </p>
+                            <p>
+                                Learning from your customers and shipping delightful, yet useful tools for them is both
+                                rewarding and challenging, which is why I've been drawn to working with early products,
+                                especially those where you can get to know your users personally.
+
+                            </p>
+                            <p>
+
+                                I’ve had the privilege of working with some great teams on some truly impactful
+                                products,
+                                and have learned a thing or two along the way. I bring that experience to new ventures
+                                and
+                                try to share it with folks through mentoring and writing.
+                            </p>
+
+                            <p>
+
+                                I tend to think about design like a founder, because I’ve been one. Balancing process
+                                and
+                                instinct, the goal is to find harmony between user delight and business strategy, as
+                                fast as
+                                you can deliver quality.
+                            </p>
+
+
+                            <p>
+                                If this seems like your cup of tea, I'd be pleased to chat about your project needs. My
+                                availability is below.
+                            </p>
+                            <p>-Alex-</p>
+                        </div>
+                    </div>
+
+                    <div class="min-[993px]:col-span-2 col-span-12">
+
+                    </div>
+                    <div class="min-[993px]:col-span-2 col-span-12">
+                        <div class="sticky">
+                            <p><a href="">alex@turnwall.com</a></p>
+                            <p><a href="">/alexturnwall</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Slider -->
+
+        <div class="select-post pb-12" id="selectPost">
+            <div class="container">
+                <hr class="rule-lg">
+
+                <div class="grid grid-cols-12 pt-2">
+                    <div class="min-[993px]:col-span-2 col-span-12">
+                        <div class="sticky">
+                            <p> <span class="font-bold section-title">Our Design </span> <br class="max-[992px]:hidden">
+                                <a href="#selectPost">All Design</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="  min-[993px]:col-span-10 col-span-12 ">
+                        <hr class="rule min-[993px]:hidden">
+                        <div class=" img-slider">
+                            <div class="slider">
+                                <div class="mySlides fade">
+                                    <img src="./assets/images/slide-1.jpg">
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="mySlides fade">
+                                    <img src="./assets/images/slide-2.jpeg">
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="mySlides fade">
+                                    <img src="./assets/images/slide-3.jpg">
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="mySlides fade">
+                                    <img src="./assets/images/slide-4.jpg">
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="mySlides fade">
+                                    <img src="./assets/images/slide-5.jpeg">
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-angles-left fa-2x previous" onclick="plusSlides(-1)"></i>
+
+                            <i class="fa-solid fa-angles-right fa-2x next" onclick="plusSlides(1)"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="py-48"></div>
+        <!-- Footer -->
+        <div class="footer py-16 bg-[#383E3E]  text-[#ccc]">
+            <div class="container">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="min-[993px]:col-span-2 col-span-12">
+                        <p class="footer-name"><a href="">Alex Turnwall</a></p>
+                    </div>
+                    <div class="min-[993px]:col-span-5 col-span-12">
+                        <p class="footer-about">I’m a Boston-based designer, developer, and strategist. I <a
+                                href="">consult</a>
+                            <a href="">write</a> , and speak about design, entrepreneurship and technology.
+                            You might also find me biking, kayaking, skiing, woodworking, or brewing.
+                        </p>
+                    </div>
+                    <div class="min-[993px]:col-span-5 col-span-12">
+                        <p class="footer-get-in-touch mb-4">Get in touch:</p>
+                        <p class="social email">Email : <a href="">alex@turnwall.com</a></p>
+                        <p class="social">LinkedIn : <a href="">/alexturnwall</a></p>
+                    </div>
+                    <div class="col-span-12 pt-28">
+                        <div class="grid grid-cols-12 ">
+                            <div class="min-[993px]:col-span-2"></div>
+                            <div class="min-[993px]:col-span-10 col-span-12">
+                                <p class="copyright">Design and content © 2008-2023 by Alex Turnwall unless otherwise
+                                    noted, all
+                                    rights reserved.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
